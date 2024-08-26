@@ -48,12 +48,6 @@ public class SpecialAttackNotifierPlugin extends Plugin
 	@Inject
 	private SpecialAttackNotifierConfig config;
 
-	@Override
-	protected void startUp() throws Exception
-	{
-		log.info("Special Attack Notifier started!");
-	}
-
 	@Subscribe
 	public void onItemContainerChanged(ItemContainerChanged event)
 	{
