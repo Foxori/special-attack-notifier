@@ -1,20 +1,24 @@
 package com.specialattacknotifier;
 
-import net.runelite.client.config.Config;
-import net.runelite.client.config.ConfigGroup;
-import net.runelite.client.config.ConfigItem;
-import net.runelite.client.config.Range;
+import net.runelite.client.config.*;
 
 import java.awt.*;
 
-@ConfigGroup("example")
+@ConfigGroup("Config")
 public interface SpecialAttackNotifierConfig extends Config
 {
+	@ConfigSection(
+			name = "Special Attack Threshold",
+			description = "Special Attack Threshold",
+			position = 0
+	)
+	String specialAttackSettings = "specialAttackThreshold";
 	@ConfigItem(
 			keyName = "specialAttackAlert",
 			name = "Special Attack Alert",
 			description = "Displays infobox when special attack is at set threshold",
-			position = 1
+			position = 1,
+			section = specialAttackSettings
 	)
 	default boolean specialAttackAlert(){
 		return true;
@@ -24,8 +28,9 @@ public interface SpecialAttackNotifierConfig extends Config
 	@ConfigItem(
 			keyName = "specialAttackThreshold",
 			name = "Special Attack Threshold",
-			description = "Threshold to display special attack threshold",
-			position = 2
+			description = "Threshold to display special attack alert",
+			position = 2,
+			section = specialAttackSettings
 
 	)
 	default int specialAttackThreshold(){
@@ -36,7 +41,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "shouldFlash",
 			name = "Flash notification box",
 			description = "Flashes notification box",
-			position = 3
+			position = 3,
+			section = specialAttackSettings
 	)
 	default boolean shouldFlash(){
 		return true;
@@ -46,7 +52,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "expireTime",
 			name = "Notification box expire time (ticks)",
 			description = "Notification box expire time in ticks",
-			position = 4
+			position = 4,
+			section = specialAttackSettings
 
 	)
 	default int expireTime(){
@@ -57,7 +64,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "notificationBoxColor1",
 			name = "Spec box color 1",
 			description =  "First color for notification box flash",
-			position = 5
+			position = 5,
+			section = specialAttackSettings
 	)
 	default Color notificationBoxColor1(){return Color.RED;}
 
@@ -65,15 +73,23 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "notificationBoxColor2",
 			name = "Spec box color 2",
 			description =  "Second color for notification box flash",
-			position = 6
+			position = 6,
+			section = specialAttackSettings
 	)
 	default Color notificationBoxColor2(){return Color.GRAY;}
-
+	@ConfigSection(
+			name = "Special Attack Soon",
+			description = "Special Attack Soon",
+			position = 1
+	)
+	String specialAttackSoon = "specialAttackSoon";
 	@ConfigItem(
 			keyName = "specialAttackSoonAlert",
 			name = "Special Attack Soon Alert",
 			description = "Display alert before special attack is recharged to specified threshold",
-			position = 7
+			position = 7,
+			section = specialAttackSoon
+
 	)
 	default boolean specialAttackSoonAlert(){
 		return true;
@@ -84,7 +100,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "specialAttackSoonDelay",
 			name = "Special Attack Soon Delay (ticks)",
 			description = "Delay to show special attack soon alert in ticks",
-			position = 8
+			position = 8,
+			section = specialAttackSoon
 
 	)
 	default int specialAttackSoonDelay(){
@@ -95,7 +112,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "specialAttackSoonShouldFlash",
 			name = "Flash spec soon notification box",
 			description = "Flashes notification box",
-			position = 9
+			position = 9,
+			section = specialAttackSoon
 	)
 	default boolean specialAttackSoonShouldFlash(){
 		return true;
@@ -106,7 +124,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "specialAttackSoonExpireTime",
 			name = "Spec soon notification box expire time",
 			description = "Notification box expire time in ticks",
-			position = 10
+			position = 10,
+			section = specialAttackSoon
 
 	)
 	default int specialAttackSoonExpireTime(){
@@ -117,7 +136,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "specialAttackSoonNotificationBoxColor1",
 			name = "Spec soon box color 1",
 			description =  "First color for spec soon notification box flash",
-			position = 11
+			position = 11,
+			section = specialAttackSoon
 	)
 	default Color specialAttackSoonNotificationBoxColor1(){return Color.CYAN;}
 
@@ -125,7 +145,8 @@ public interface SpecialAttackNotifierConfig extends Config
 			keyName = "specialAttackSooNotificationBoxColor2",
 			name = "Spec soon box color 2",
 			description =  "Second color for spec soon notification box flash",
-			position = 12
+			position = 12,
+			section = specialAttackSoon
 	)
 	default Color specialAttackSooNotificationBoxColor2(){return Color.GRAY;}
 

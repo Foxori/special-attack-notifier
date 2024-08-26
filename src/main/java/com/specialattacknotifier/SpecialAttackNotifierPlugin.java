@@ -82,12 +82,9 @@ public class SpecialAttackNotifierPlugin extends Plugin
 				LastSpecialAttackEnergy = specialAttackEnergy;
 				specialAttackValueChanged = true;
 			}
-			log.info("specialAttackValueChanged " + String.valueOf(specialAttackValueChanged));
-			log.info("OverlayClearedByTimeout " + String.valueOf(OverlayClearedByTimeout));
-			if(client.getVarpValue(VarPlayer.SPECIAL_ATTACK_PERCENT) >= (config.specialAttackThreshold() * 10) && !SpecialAttackOverlayShowing && specialAttackValueChanged){
+			if(specialAttackEnergy >= (config.specialAttackThreshold() * 10) && !SpecialAttackOverlayShowing && specialAttackValueChanged && specialAttackEnergy < (config.specialAttackThreshold() * 10 + 50)){
 				overlayManager.add(specialAttackOverlay);
 				SpecialAttackOverlayShowing = true;
-				log.info("Overlay added!");
 			}
 		}
 
@@ -116,7 +113,7 @@ public class SpecialAttackNotifierPlugin extends Plugin
 			{
 				ticksSinceSpecRegen = (ticksSinceSpecRegen + 1) % ticksPerSpecRegen;
 			}
-			if((specialAttackEnergy + 100) >= config.specialAttackThreshold() * 10){
+			if((specialAttackEnergy + 100) >= config.specialAttackThreshold() * 10 && (specialAttackEnergy + 50) < config.specialAttackThreshold() * 10){
 				if((ticksPerSpecRegen - ticksSinceSpecRegen) == config.specialAttackSoonDelay()){
 					notifySpecialAttackSoon();
 				}
