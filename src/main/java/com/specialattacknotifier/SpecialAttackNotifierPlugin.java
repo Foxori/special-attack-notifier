@@ -48,6 +48,13 @@ public class SpecialAttackNotifierPlugin extends Plugin
 	@Inject
 	private SpecialAttackNotifierConfig config;
 
+	@Override
+	protected void shutDown()
+	{
+		clearSpecOverlay();
+		clearSpecSoonOverlay();
+	}
+
 	@Subscribe
 	public void onItemContainerChanged(ItemContainerChanged event)
 	{
