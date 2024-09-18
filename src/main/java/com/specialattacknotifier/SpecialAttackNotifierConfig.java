@@ -15,7 +15,7 @@ public interface SpecialAttackNotifierConfig extends Config
 	String specialAttackSettings = "specialAttackThreshold";
 	@ConfigItem(
 			keyName = "specialAttackAlert",
-			name = "Special Attack Alert",
+			name = "Enabled",
 			description = "Displays infobox when special attack is at set threshold",
 			position = 1,
 			section = specialAttackSettings
@@ -27,7 +27,7 @@ public interface SpecialAttackNotifierConfig extends Config
 	@Range(max=100, min=0)
 	@ConfigItem(
 			keyName = "specialAttackThreshold",
-			name = "Special Attack Threshold",
+			name = "Threshold %",
 			description = "Threshold to display special attack alert",
 			position = 2,
 			section = specialAttackSettings
@@ -50,7 +50,7 @@ public interface SpecialAttackNotifierConfig extends Config
 
 	@ConfigItem(
 			keyName = "expireTime",
-			name = "Notification box expire time (ticks)",
+			name = "Expire (ticks)",
 			description = "Notification box expire time in ticks",
 			position = 4,
 			section = specialAttackSettings
@@ -62,7 +62,7 @@ public interface SpecialAttackNotifierConfig extends Config
 
 	@ConfigItem(
 			keyName = "notificationBoxColor1",
-			name = "Spec box color 1",
+			name = "Color 1",
 			description =  "First color for notification box flash",
 			position = 5,
 			section = specialAttackSettings
@@ -71,7 +71,7 @@ public interface SpecialAttackNotifierConfig extends Config
 
 	@ConfigItem(
 			keyName = "notificationBoxColor2",
-			name = "Spec box color 2",
+			name = "Color 2",
 			description =  "Second color for notification box flash",
 			position = 6,
 			section = specialAttackSettings
@@ -85,7 +85,7 @@ public interface SpecialAttackNotifierConfig extends Config
 	String specialAttackSoon = "specialAttackSoon";
 	@ConfigItem(
 			keyName = "specialAttackSoonAlert",
-			name = "Special Attack Soon Alert",
+			name = "Enabled",
 			description = "Display alert before special attack is recharged to specified threshold",
 			position = 7,
 			section = specialAttackSoon
@@ -98,7 +98,7 @@ public interface SpecialAttackNotifierConfig extends Config
 	@Range(max=30, min=1)
 	@ConfigItem(
 			keyName = "specialAttackSoonDelay",
-			name = "Special Attack Soon Delay (ticks)",
+			name = "Delay (ticks)",
 			description = "Delay to show special attack soon alert in ticks",
 			position = 8,
 			section = specialAttackSoon
@@ -110,7 +110,7 @@ public interface SpecialAttackNotifierConfig extends Config
 
 	@ConfigItem(
 			keyName = "specialAttackSoonShouldFlash",
-			name = "Flash spec soon notification box",
+			name = "Flash notification box",
 			description = "Flashes notification box",
 			position = 9,
 			section = specialAttackSoon
@@ -122,7 +122,7 @@ public interface SpecialAttackNotifierConfig extends Config
 	@Range(max=10, min=1)
 	@ConfigItem(
 			keyName = "specialAttackSoonExpireTime",
-			name = "Spec soon notification box expire time",
+			name = "Expire (ticks)",
 			description = "Notification box expire time in ticks",
 			position = 10,
 			section = specialAttackSoon
@@ -134,7 +134,7 @@ public interface SpecialAttackNotifierConfig extends Config
 
 	@ConfigItem(
 			keyName = "specialAttackSoonNotificationBoxColor1",
-			name = "Spec soon box color 1",
+			name = "Color 1",
 			description =  "First color for spec soon notification box flash",
 			position = 11,
 			section = specialAttackSoon
@@ -143,7 +143,7 @@ public interface SpecialAttackNotifierConfig extends Config
 
 	@ConfigItem(
 			keyName = "specialAttackSooNotificationBoxColor2",
-			name = "Spec soon box color 2",
+			name = "Color 2",
 			description =  "Second color for spec soon notification box flash",
 			position = 12,
 			section = specialAttackSoon
