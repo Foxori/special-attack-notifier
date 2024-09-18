@@ -10,3 +10,6 @@ Displays info box alert before threshold is reached
   - Configurable expiry time (in ticks)
   - Configurable delay before threshold (in ticks)
   -  Configurable color and flash between two colors
+
+Current issues:
+  - Does not work correctly when special attack has decimals. For example adrenaline + DDS in ToA
