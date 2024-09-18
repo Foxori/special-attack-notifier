@@ -77,8 +77,7 @@ public class SpecialAttackNotifierPlugin extends Plugin
 				specialAttackValueChanged = true;
 			}
 			if(specialAttackEnergy >= (config.specialAttackThreshold() * 10) && !SpecialAttackOverlayShowing && specialAttackValueChanged && specialAttackEnergy < (config.specialAttackThreshold() * 10 + 50)){
-				overlayManager.add(specialAttackOverlay);
-				SpecialAttackOverlayShowing = true;
+				notifySpecialAttack();
 			}
 		}
 
@@ -139,8 +138,8 @@ public class SpecialAttackNotifierPlugin extends Plugin
 	}
 	private void notifySpecialAttack()
 	{
-		SpecialAttackSoonOverlayShowing = true;
-		overlayManager.add(specialAttackSoonOverlay);
+		SpecialAttackOverlayShowing = true;
+		overlayManager.add(specialAttackOverlay);
 	}
 
 	private void clearSpecOverlay(){
