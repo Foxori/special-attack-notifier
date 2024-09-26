@@ -15,3 +15,4 @@ Known issues:
   - Does not work correctly when special attack has decimals. For example adrenaline + DDS in ToA
   - Displays alert also when going special attack comes down from 100%
   - Alerts display wrong when changing special attack soon ticks
+  - Investigate adding opacity to color
