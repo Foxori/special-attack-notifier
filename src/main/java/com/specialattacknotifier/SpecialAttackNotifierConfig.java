@@ -60,6 +60,7 @@ public interface SpecialAttackNotifierConfig extends Config
 		return 10;
 	}
 
+	@Alpha
 	@ConfigItem(
 			keyName = "notificationBoxColor1",
 			name = "Color 1",
@@ -69,6 +70,7 @@ public interface SpecialAttackNotifierConfig extends Config
 	)
 	default Color notificationBoxColor1(){return Color.RED;}
 
+	@Alpha
 	@ConfigItem(
 			keyName = "notificationBoxColor2",
 			name = "Color 2",
@@ -131,7 +133,8 @@ public interface SpecialAttackNotifierConfig extends Config
 	default int specialAttackSoonExpireTime(){
 		return 6;
 	}
-
+	
+	@Alpha
 	@ConfigItem(
 			keyName = "specialAttackSoonNotificationBoxColor1",
 			name = "Color 1",
@@ -141,6 +144,7 @@ public interface SpecialAttackNotifierConfig extends Config
 	)
 	default Color specialAttackSoonNotificationBoxColor1(){return Color.CYAN;}
 
+	@Alpha
 	@ConfigItem(
 			keyName = "specialAttackSooNotificationBoxColor2",
 			name = "Color 2",
